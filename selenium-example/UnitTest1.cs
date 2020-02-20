@@ -9,11 +9,11 @@ namespace selenium_example
     [TestClass]
     public class UnitTest1
     {
-        private IWebDriver driver;
-        private WebDriverWait wait;
+         private IWebDriver driver;
+         private WebDriverWait wait;
 
         [TestInitialize]
-        public void Star()
+        public void Start()
         {
             driver = new ChromeDriver();
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -25,6 +25,7 @@ namespace selenium_example
             driver.Url = "http://www.google.com/";
             driver.FindElement(By.XPath("//*[@class = 'gLFyf gsfi']")).SendKeys("webdriver");
             driver.FindElement(By.Name("btnK")).SendKeys(Keys.Enter);
+            wait.Until(ExpectedConditions.TitleIs("webdriver - Поиск в Google"));
         }
 
         // разрушение объекта драйвера после окончание теста.
