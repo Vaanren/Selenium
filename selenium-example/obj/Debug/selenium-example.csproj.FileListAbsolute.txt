@@ -34,7 +34,7 @@ D:\Staging\auto\Selenium\selenium-example\bin\Debug\Microsoft.VisualStudio.TestP
 D:\Staging\auto\Selenium\selenium-example\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 D:\Staging\auto\Selenium\selenium-example\bin\Debug\WebDriver.xml
 D:\Staging\auto\Selenium\selenium-example\bin\Debug\WebDriver.Support.xml
-D:\Staging\auto\Selenium\selenium-example\obj\Debug\selenium-example.csprojAssemblyReference.cache
 D:\Staging\auto\Selenium\selenium-example\obj\Debug\selenium-example.csproj.CopyComplete
 D:\Staging\auto\Selenium\selenium-example\obj\Debug\selenium-example.dll
 D:\Staging\auto\Selenium\selenium-example\obj\Debug\selenium-example.pdb
+D:\Staging\auto\Selenium\selenium-example\obj\Debug\selenium-example.csprojAssemblyReference.cache

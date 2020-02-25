@@ -3,8 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System.Linq;
 
-
-namespace selenium_example.Admin
+namespace selenium_example
 {
     /*
      * Тест отображения всех пунктов меню
