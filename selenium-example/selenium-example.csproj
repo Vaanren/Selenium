@@ -57,8 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseSteps.cs" />
+    <Compile Include="ZonesSort.cs" />
     <Compile Include="SectionsMenu.cs" />
     <Compile Include="StickersOnMainPage.cs" />
+    <Compile Include="CountrySort.cs" />
+    <Compile Include="Authorization.cs" />
     <Compile Include="UnitTest2.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

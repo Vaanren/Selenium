@@ -24,8 +24,7 @@ namespace selenium_example
                 int count = x.FindElements(By.XPath(".//div[contains(@class, 'sticker')]")).Count;
                 if (count == 1) { }
                 else { throw new AssertFailedException(); }
-            }
-            );
+            });
         }
 
         [TestCleanup]
