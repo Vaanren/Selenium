@@ -57,13 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseSteps.cs" />
-    <Compile Include="ZonesSort.cs" />
-    <Compile Include="SectionsMenu.cs" />
-    <Compile Include="StickersOnMainPage.cs" />
-    <Compile Include="CountrySort.cs" />
+    <Compile Include="Lesson 5\GeoZones.cs" />
+    <Compile Include="Lesson 5\ZonesSort.cs" />
+    <Compile Include="Lesson 4\SectionsMenu.cs" />
+    <Compile Include="Lesson 4\StickersOnMainPage.cs" />
+    <Compile Include="Lesson 5\CountrySort.cs" />
     <Compile Include="Base\Authorization.cs" />
-    <Compile Include="sandbox\UnitTest2.cs" />
-    <Compile Include="sandbox\UnitTest1.cs" />
+    <Compile Include="Base\UnitTest2.cs" />
+    <Compile Include="Base\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
