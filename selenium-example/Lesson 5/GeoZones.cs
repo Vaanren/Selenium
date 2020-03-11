@@ -18,27 +18,32 @@ namespace selenium_example
             
             Browser.Url = "http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones";
 
-            //Находим все ячейки количества зон отличные от 0
+            //1. Находим все ячейки количества зон отличные от 0
             int rows = Browser.FindElements(By.XPath("//*[@class='row']/td[4][text()!='0']")).ToArray().Length;
 
             for (int i = 1; i < rows; i++)
             {
+                //2. Кликаем по ссылке в нужном нам ряду
                 Browser.FindElement(By.XPath($"//*[@class='row']/td[4][text()!='0'][{i}]/preceding-sibling::td/a")).Click();
                 Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("h1")));
 
-                IEnumerable<IWebElement> zones = Browser.FindElements(By.XPath("//table[@class='dataTable']/tbody/tr/td[3]")).ToList();
+                //3. Собираем в список имена зон как элементов
+                IEnumerable<IWebElement> zones = Browser.FindElements(By.XPath("//table[@class='dataTable']/tbody/tr/td[3]/select/option[@selected]")).ToList();
 
-               
                 List<string> expect;
                 List<string> actual = new List<string>();
 
+                //4. Собираем названия зон и кладем в список
                 foreach (IWebElement zone in zones)
                 {
                     actual.Add(zone.GetAttribute("innerText"));
                 }
 
+                //5. Дублируем список actual в список expect, затем сортируем expect
                 expect = actual;
                 expect.Sort();
+
+                //6. Сравниваем списки
                 if (actual.SequenceEqual(expect))
                 {
                     Browser.FindElement(By.XPath("//button[@name='cancel']")).Click();

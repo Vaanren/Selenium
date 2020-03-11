@@ -45,6 +45,7 @@ namespace selenium_example
                 //5. Дублируем список actual в список expect, затем сортируем expect
                 expect = actual;
                 expect.Sort();
+
                 //6. Сравниваем списки
                 if (actual.SequenceEqual(expect))
                 {

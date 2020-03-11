@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\BaseSteps.cs" />
+    <Compile Include="Lesson 5\ProductPage.cs" />
     <Compile Include="Lesson 5\GeoZones.cs" />
     <Compile Include="Lesson 5\ZonesSort.cs" />
     <Compile Include="Lesson 4\SectionsMenu.cs" />
