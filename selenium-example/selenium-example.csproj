@@ -56,17 +56,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseSteps.cs" />
+    <Compile Include="Base\BaseSteps.cs" />
     <Compile Include="ZonesSort.cs" />
     <Compile Include="SectionsMenu.cs" />
     <Compile Include="StickersOnMainPage.cs" />
     <Compile Include="CountrySort.cs" />
-    <Compile Include="Authorization.cs" />
-    <Compile Include="UnitTest2.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Base\Authorization.cs" />
+    <Compile Include="sandbox\UnitTest2.cs" />
+    <Compile Include="sandbox\UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

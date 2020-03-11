@@ -18,41 +18,35 @@ namespace selenium_example
             //Костыль нажатия на кнопку меню Country, просто переходим по URL после авторизации
             Browser.Url = "http://localhost/litecart/admin/?app=countries&doc=countries";
 
-            //Список количества 'Зон' как элементов с список 'number'
-            IEnumerable<IWebElement> number = Browser.FindElements(By.XPath("//*[@class='row']/td[6]")).ToList();
+            //Находим все ячейки количества зон отличные от 0
+            int rows = Browser.FindElements(By.XPath("//*[@class='row']/td[6][text()!='0']")).ToArray().Length;
 
-            foreach (IWebElement ent in number)
+            for (int i = 1; i < rows; i++)
             {
-                //Получаем innerText каждого элемента и конвертируем в цифру
-               string count = ent.GetAttribute("innerText");
-               int c = Convert.ToInt32(count);
+                Browser.FindElement(By.XPath($"//*[@class='row']/td[6][text()!='0'][{i}]/preceding-sibling::td/a")).Click();
+                Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector("h1")));
 
-                if (c > 0) 
-                {
-                    // Кликаем по стране
-                    ent.FindElement(By.XPath("./preceding-sibling::td/a")).Click();
-
-                    // Собираем все 'Зоны' страны в список 'names'
-                    IEnumerable<IWebElement> zones = Browser.FindElements(By.XPath("//table[@class='dataTable']" + //таблица зон
+                IEnumerable<IWebElement> zones = Browser.FindElements(By.XPath("//table[@class='dataTable']" + //таблица зон
                         "/tbody/tr/td[3]" + // столбец наименования зон
                         "/input[@value != '']")) // только там где есть значения (чтобы не зацепить строку поиска)
                         .ToList();
 
-                    List<string> actual = new List<string>();
-                    List<string> expect;
+                List<string> actual = new List<string>();
+                List<string> expect;
 
-                    foreach (IWebElement zone in zones)
-                    {
-                        actual.Add(zone.GetAttribute("innerText"));
-                    }
-
-                    expect = actual;
-                    expect.Sort();
-                    if (actual.SequenceEqual(expect) == false) 
-                    { throw new AssertFailedException("Список зон НЕ отсортирован по алфавиту"); };
-
+                foreach (IWebElement zone in zones)
+                {
+                    actual.Add(zone.GetAttribute("innerText"));
                 }
 
+                expect = actual;
+                expect.Sort();
+                if (actual.SequenceEqual(expect))
+                {
+                    Browser.FindElement(By.XPath("//button[@name='cancel']")).Click();
+                }
+                else
+                { throw new AssertFailedException("Список зон НЕ отсортирован по алфавиту"); };
             }
         }
 

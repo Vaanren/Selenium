@@ -15,7 +15,7 @@ namespace selenium_example
         public void TestMethod1()
         {
             Authorization.EnterAdmin();
-            //1. Костыль нажатия на кнопку меню Country, просто переходим по URL после авторизации
+            //1. TODO Костыль нажатия на кнопку меню Country, просто переходим по URL после авторизации
             Browser.Url = "http://localhost/litecart/admin/?app=countries&doc=countries";
 
             //2. Собираем список стран как элементов
